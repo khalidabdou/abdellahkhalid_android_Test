@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Plot Test</string>
+    <string name="API_KEY">AIzaSyDsFbrWZC7mVjyjW1bTm5E9VilVR3u5oNo</string>
+    
+    <string name="toast_tap_map">Tap on the map to add points</string>
+    <string name="toast_need_3_points">You need at least 3 points to save a plot</string>
+    <string name="toast_plot_deleted">Plot \'%1$s\' deleted</string>
+    <string name="button_stop">Stop</string>
+    <string name="button_draw">Draw</string>
+    <string name="button_save">Save</string>
+    <string name="content_desc_stop">Stop</string>
+    <string name="content_desc_draw">Draw</string>
+    <string name="content_desc_save">Save</string>
+    
+
+    <string name="select_plot">Select a Plot</string>
+    <string name="content_desc_delete">Delete</string>
+    
+    <string name="dialog_save_plot_title">Save Plot</string>
+    <string name="dialog_save_plot_message">Enter a name for this plot</string>
+    <string name="label_plot_name">Plot Name</string>
+    <string name="button_cancel">Cancel</string>
+    
+    <string name="delete_plot_title">Delete Plot?</string>
+    <string name="delete_plot_message">Are you sure you want to delete \'%1$s\'? This action cannot be undone.</string>
+    <string name="button_delete">Delete</string>
+    
+    <string name="marker_point">Point %1$d</string>
+</resources>
