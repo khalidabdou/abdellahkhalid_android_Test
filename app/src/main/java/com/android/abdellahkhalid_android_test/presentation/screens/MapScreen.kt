@@ -1,6 +1,12 @@
 package com.android.abdellahkhalid_android_test.presentation.screens
 
 import android.widget.Toast
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -16,10 +22,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.Done
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -121,43 +127,68 @@ fun MapScreen(
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                FloatingActionButton(
-                    onClick = {
-                        if (isDrawing) {
-                            viewModel.stopDrawing()
-                        } else {
-                            viewModel.startDrawing()
-                            Toast.makeText(
-                                context,
-                                context.getString(R.string.toast_tap_map),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    },
-                    containerColor = if (isDrawing) colorResource(R.color.ios_green) else colorResource(R.color.ios_blue),
-                    elevation = FloatingActionButtonDefaults.elevation(0.dp)
+                AnimatedVisibility(
+                    visible = true,
+                    enter = fadeIn(animationSpec = tween(300)) + scaleIn(
+                        initialScale = 0.8f,
+                        animationSpec = tween(300)
+                    ),
+                    exit = fadeOut(animationSpec = tween(300)) + scaleOut(
+                        targetScale = 0.8f,
+                        animationSpec = tween(300)
+                    )
                 ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+                    Button(
+                        onClick = {
+                            if (isDrawing) {
+                                viewModel.stopDrawing()
+                            } else {
+                                viewModel.startDrawing()
+                                Toast.makeText(
+                                    context,
+                                    context.getString(R.string.toast_tap_map),
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = if (isDrawing) colorResource(R.color.ios_green) else colorResource(R.color.ios_blue)
+                        ),
+                        shape = RoundedCornerShape(16.dp)
                     ) {
-                        Icon(
-                            imageVector = if (isDrawing) Icons.Default.Done else Icons.Default.Create,
-                            contentDescription = stringResource(if (isDrawing) R.string.content_desc_stop else R.string.content_desc_draw),
-                            tint = Color.White
-                        )
-                        Spacer(modifier = Modifier.height(4.dp))
-                        Text(
-                            text = stringResource(if (isDrawing) R.string.button_stop else R.string.button_draw),
-                            color = Color.White,
-                            fontSize = 12.sp,
-                            fontWeight = FontWeight.Medium
-                        )
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                        ) {
+                            Icon(
+                                imageVector = if (isDrawing) Icons.Default.Done else Icons.Default.Create,
+                                contentDescription = stringResource(if (isDrawing) R.string.content_desc_stop else R.string.content_desc_draw),
+                                tint = Color.White,
+                                modifier = Modifier.height(18.dp).width(18.dp)
+                            )
+                            Spacer(modifier = Modifier.height(2.dp))
+                            Text(
+                                text = stringResource(if (isDrawing) R.string.button_stop else R.string.button_draw),
+                                color = Color.White,
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Medium
+                            )
+                        }
                     }
                 }
                 
-                if (polygonPoints.isNotEmpty() && !isDrawing && selectedPlot == null) {
-                    FloatingActionButton(
+                AnimatedVisibility(
+                    visible = polygonPoints.isNotEmpty() && !isDrawing && selectedPlot == null,
+                    enter = fadeIn(animationSpec = tween(300)) + scaleIn(
+                        initialScale = 0.8f,
+                        animationSpec = tween(300)
+                    ),
+                    exit = fadeOut(animationSpec = tween(300)) + scaleOut(
+                        targetScale = 0.8f,
+                        animationSpec = tween(300)
+                    )
+                ) {
+                    Button(
                         onClick = {
                             if (polygonPoints.size < 3) {
                                 Toast.makeText(
@@ -169,23 +200,26 @@ fun MapScreen(
                                 viewModel.showSaveDialog()
                             }
                         },
-                        containerColor = colorResource(R.color.ios_orange),
-                        elevation = FloatingActionButtonDefaults.elevation(0.dp)
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = colorResource(R.color.ios_orange)
+                        ),
+                        shape = RoundedCornerShape(16.dp)
                     ) {
                         Column(
                             horizontalAlignment = Alignment.CenterHorizontally,
-                            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Done,
                                 contentDescription = stringResource(R.string.content_desc_save),
-                                tint = Color.White
+                                tint = Color.White,
+                                modifier = Modifier.height(18.dp).width(18.dp)
                             )
-                            Spacer(modifier = Modifier.height(4.dp))
+                            Spacer(modifier = Modifier.height(2.dp))
                             Text(
                                 text = stringResource(R.string.button_save),
                                 color = Color.White,
-                                fontSize = 12.sp,
+                                fontSize = 10.sp,
                                 fontWeight = FontWeight.Medium
                             )
                         }
