@@ -1,5 +1,11 @@
 # Plot Mapping Android Application
 
+<div align="center">
+
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/khalidabdou/abdellahkhalid_android_Test/raw/main/apk/app-debug.apk)
+
+</div>
+
 A modern Android application for drawing and managing geographical plots on Google Maps. Built with Jetpack Compose, Clean Architecture, and Room Database.
 
 ## 📱 Features
@@ -90,9 +96,9 @@ cd abdellahkhalid_android_Test
 
 Download the latest debug APK:
 
-**[Download APK](https://github.com/khalidabdou/abdellahkhalid_android_Test/raw/main/app/debug/app-debug.apk)**
+**[Download APK](https://github.com/khalidabdou/abdellahkhalid_android_Test/raw/main/apk/app-debug.apk)**
 
-> Note: This is a debug build. For production use, generate a signed release APK.
+> Note: This is a debug build for testing purposes.
 
 ## 🎯 How to Use
 
