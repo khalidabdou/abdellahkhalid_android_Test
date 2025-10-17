@@ -157,24 +157,24 @@ val plots: StateFlow<List<Plot>> = repository.getAllPlots()
 <table>
   <tr>
     <td align="center">
-      <img src="screenShots/Screenshot_20251017_105500.png" width="200" alt="Main Map View"/>
+      <img src="screenShots/Screenshot_20251017_105500.png" width="200" alt="Drawing Mode"/>
       <br/>
-      <b>Main Map View</b>
+      <b>1. Drawing Mode</b>
     </td>
     <td align="center">
-      <img src="screenShots/Screenshot_20251017_110035.png" width="200" alt="Drawing Mode"/>
+      <img src="screenShots/Screenshot_20251017_110035.png" width="200" alt="Save Plot Dialog"/>
       <br/>
-      <b>Drawing Mode</b>
+      <b>2. Save Plot Dialog</b>
     </td>
     <td align="center">
-      <img src="screenShots/Screenshot_20251017_110046.png" width="200" alt="Plot Selection"/>
+      <img src="screenShots/Screenshot_20251017_110046.png" width="200" alt="Select Plot"/>
       <br/>
-      <b>Plot Selection</b>
+      <b>3. Select Plot</b>
     </td>
     <td align="center">
-      <img src="screenShots/Screenshot_20251017_110055.png" width="200" alt="Save Plot Dialog"/>
+      <img src="screenShots/Screenshot_20251017_110055.png" width="200" alt="Delete Confirmation"/>
       <br/>
-      <b>Save Plot Dialog</b>
+      <b>4. Delete Confirmation</b>
     </td>
   </tr>
 </table>
