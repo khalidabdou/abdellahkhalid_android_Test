@@ -154,21 +154,30 @@ val plots: StateFlow<List<Plot>> = repository.getAllPlots()
 
 ## 📸 Screenshots
 
-<div align="center">
-
-### Main Map View
-<img src="screenShots/Screenshot_20251017_105500.png" width="250" alt="Main Map View"/>
-
-### Drawing Mode
-<img src="screenShots/Screenshot_20251017_110035.png" width="250" alt="Drawing Mode"/>
-
-### Plot Selection
-<img src="screenShots/Screenshot_20251017_110046.png" width="250" alt="Plot Selection"/>
-
-### Save Plot Dialog
-<img src="screenShots/Screenshot_20251017_110055.png" width="250" alt="Save Plot Dialog"/>
-
-</div>
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenShots/Screenshot_20251017_105500.png" width="200" alt="Main Map View"/>
+      <br/>
+      <b>Main Map View</b>
+    </td>
+    <td align="center">
+      <img src="screenShots/Screenshot_20251017_110035.png" width="200" alt="Drawing Mode"/>
+      <br/>
+      <b>Drawing Mode</b>
+    </td>
+    <td align="center">
+      <img src="screenShots/Screenshot_20251017_110046.png" width="200" alt="Plot Selection"/>
+      <br/>
+      <b>Plot Selection</b>
+    </td>
+    <td align="center">
+      <img src="screenShots/Screenshot_20251017_110055.png" width="200" alt="Save Plot Dialog"/>
+      <br/>
+      <b>Save Plot Dialog</b>
+    </td>
+  </tr>
+</table>
 
 ## 🤝 Contributing
 
