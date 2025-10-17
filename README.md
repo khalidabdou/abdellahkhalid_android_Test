@@ -179,23 +179,11 @@ val plots: StateFlow<List<Plot>> = repository.getAllPlots()
   </tr>
 </table>
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-
 ## 👨‍💻 Author
 
 **Khalid Abdellah**
 - GitHub: [@khalidabdou](https://github.com/khalidabdou)
 
-## 🙏 Acknowledgments
-
-- Google Maps Android API
-- Jetpack Compose team
-- Koin framework
-- Room Database
-
 ---
 
-**Made with ❤️ using Kotlin and Jetpack Compose**
+**Built with Kotlin and Jetpack Compose**
